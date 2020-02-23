@@ -4,7 +4,7 @@ def ACCOUNT_REGISTRY_PREFIX
 def GIT_COMMIT_HASH
 
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Checkout Source Code and Logging Into Registry') {
             steps {
