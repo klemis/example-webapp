@@ -50,7 +50,7 @@ pipeline {
             }
 		}
 		
-		stage('Build Production Image`') {
+		stage('Build Production Image') {
             steps {
 				echo 'Starting to build docker image'
                 script {
@@ -61,7 +61,7 @@ pipeline {
             }
 		}
 		
-		stage('Deploy to Production fixed server`') {
+		stage('Deploy to Production fixed server') {
 			when {
 				branch 'release'
 			}
@@ -70,7 +70,7 @@ pipeline {
                 script {
 					productionImage.push("deploy")
 					sh """
-						aws ec2 reboot-instances --region us-east-2 --instance-ids i-0820fb7c80b46482b 
+						aws ec2 reboot-instances --region us-east-2 --instance-ids i-0820fb7c80b46482b
 					"""
 				}
             }
