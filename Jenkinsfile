@@ -66,7 +66,7 @@ pipeline {
 				branch 'release'
 			}
             steps {
-				echo 'Deploying release to production'
+				echo 'Deploying release to production server`'
                 script {
 					productionImage.push("deploy")
 					sh """
